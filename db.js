@@ -2,6 +2,8 @@ var MongoClient = require("mongodb").MongoClient;
 
 // This is a singleton type structure for holding the DB connection
 
+const dbname = "sampledb";
+
 var state = {
   db: null
 };
@@ -12,7 +14,7 @@ exports.connect = function(url, done) {
   MongoClient.connect(url, function(err, client) {
     if (err) return done(err);
     // Addition: Connecting to right DB
-    state.db = client.db("sampledb");
+    state.db = client.db(dbname);
     done();
   });
 };

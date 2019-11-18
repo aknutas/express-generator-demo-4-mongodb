@@ -13,8 +13,6 @@ router.get("/", function(req, res, next) {
   // Getting content from Mongo
   // Collection first
 
-  console.log(db.get());
-
   db.get()
     .collection("posts")
     .find()

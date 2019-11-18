@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./start/www.js"
+    "start": "node ./start/www.js",
+    "devstart": "nodemon ./start/www.js"
   },
   "dependencies": {
     "bluebird": "3.7.1",

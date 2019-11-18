@@ -32,8 +32,9 @@ exports.close = function(done) {
 
 // This is a helper function for building the OPENSHIFT Mongo connection string
 exports.urlbuilder = function() {
-  var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
-    mongoURLLabel = "";
+  // Reading env variables (config example from https://github.com/sclorg/nodejs-ex/blob/master/server.js)
+  var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL;
+  var mongoURLLabel = "";
 
   // For local dev
   // var mongoURL = 'mongodb://localhost:27017/demodb';
@@ -74,5 +75,6 @@ exports.urlbuilder = function() {
       mongoURL += mongoHost + ":" + mongoPort + "/" + mongoDatabase;
     }
   }
+
   return mongoURL;
 };

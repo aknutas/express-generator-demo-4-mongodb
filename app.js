@@ -30,7 +30,7 @@ app.use("/posts", postsRouter);
 
 // Connect to database
 var db = require("./db");
-db.connect(db.urlbuilder, function(err) {
+db.connect(db.urlbuilder(), function(err) {
   if (err) {
     console.log("Unable to connect to Mongo.");
     process.exit(1);

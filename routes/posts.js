@@ -13,10 +13,7 @@ router.get("/", function(req, res, next) {
   // Getting content from Mongo
   // Collection first
 
-  var dbc = db.get();
-  console.log(dbc);
-
-  dbc
+  db.get()
     .collection("posts")
     .find()
     .limit(100)

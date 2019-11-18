@@ -12,7 +12,7 @@ const { sanitizeBody } = require("express-validator");
 router.get("/", function(req, res, next) {
   // Getting content from Mongo
   // Collection first
-  db.get
+  db.get()
     .collection("posts")
     .find()
     .limit(100)
@@ -41,7 +41,7 @@ router.post(
     console.log("We got content: " + local_content);
     console.log("from author: " + local_author);
 
-    db.get
+    db.get()
       .collection("posts")
       .insertOne({ content: local_content, author: local_author })
       .then(function() {
